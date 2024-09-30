@@ -1,0 +1,33 @@
+services:
+  myapp:
+    build: ./
+    container_name: fastapi-compose
+    ports:
+      - "8501:8501"
+    networks:
+      - demo-network
+    # depends_on:
+    #   - postgrsdb   
+        
+        
+  # postgrsdb:
+  #   image:  postgres:latest 
+  #   restart: always
+  #   container_name: postgresdb-container
+  #   environment:
+  #     - POSTGRES_PASSWORD=adasdfdaf
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - demo-network
+  #   volumes:
+  #     - db-volume:/var/lib/postgresql/data
+            
+
+networks:
+  demo-network:
+    
+
+# volumes:
+#   db-volume:
+#     driver: local        
